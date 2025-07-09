@@ -1,11 +1,11 @@
 
-# 📘 ResCurve: A DCA & Forecasting Project Using Volve Data
+#  ResCurve: A DCA & Forecasting Project Using Volve Data
 
 This project uses production data from the **Volve field** (Norwegian Continental Shelf) to estimate reserves, apply decline curve models, and forecast future production trends.
 
 ---
 
-## 🎯 Objectives
+##  Objectives
 
 Using historical production data for multiple wellbores, the goal is to:
 
@@ -16,7 +16,7 @@ Using historical production data for multiple wellbores, the goal is to:
 
 ---
 
-## 🔧 Tools & Libraries
+##  Tools & Libraries
 
 This analysis is implemented in **Python**, using the following packages:
 
@@ -29,7 +29,7 @@ This analysis is implemented in **Python**, using the following packages:
 
 ---
 
-## 📚 Dataset Overview
+##  Dataset Overview
 
 The dataset includes daily and monthly production volumes for 7 wellbores, including:
 
@@ -39,7 +39,7 @@ The dataset includes daily and monthly production volumes for 7 wellbores, inclu
 
 ---
 
-## 🙏 Data Acknowledgment
+##  Data Acknowledgment
 
 This project utilizes publicly available production data from the **Volve Field**, provided by **Equinor ASA**.
 
@@ -51,7 +51,7 @@ We gratefully acknowledge **Equinor ASA** for sharing this open dataset for rese
 
 ---
 
-## 📌 Workflow Summary
+##  Workflow Summary
 
 ```
 Load Excel → Inspect structure → Clean and reshape → Plot trends → Fit DCA models → Forecast → Estimate reserves
@@ -59,20 +59,20 @@ Load Excel → Inspect structure → Clean and reshape → Plot trends → Fit D
 
 ---
 
-## 🔍 Key Findings
+##  Key Findings
 
-### ✅ Well Selection – 15/9-F-12
+###  Well Selection – 15/9-F-12
 
 **Well 15/9-F-12** was selected for decline analysis due to:
 
-- 📈 Long Production Life: Over 3000 days of production data  
-- 🛢️ High Cumulative Output: ~4.5 million Sm³  
-- ⏱️ Consistent Production Trends: Minimal interruptions  
-- 📉 Clear Decline Pattern: Ideal for decline curve model fitting  
+-  Long Production Life: Over 3000 days of production data  
+-  High Cumulative Output: ~4.5 million Sm³  
+-  Consistent Production Trends: Minimal interruptions  
+-  Clear Decline Pattern: Ideal for decline curve model fitting  
 
 ---
 
-### 📉 Decline Curve Fitting
+###  Decline Curve Fitting
 
 - The **hyperbolic model** provided the best match to historical data:
   - **RMSE = 944.97**, **R² = 0.6769**
@@ -82,7 +82,7 @@ Load Excel → Inspect structure → Clean and reshape → Plot trends → Fit D
 
 ---
 
-### 🔮 Forecasting & EUR
+###  Forecasting & EUR
 
 - Forecasted oil rate over ~5000 days using the hyperbolic model
 - **Economic limit**: 100 Sm³/day  
@@ -93,7 +93,7 @@ Load Excel → Inspect structure → Clean and reshape → Plot trends → Fit D
 
 ---
 
-### 🧮 OOIP Estimation
+###  OOIP Estimation
 
 - Used a simplified material balance approach  
 - Assumed Bo = 1.2 reservoir bbl/STB (due to missing PVT)  
@@ -101,7 +101,7 @@ Load Excel → Inspect structure → Clean and reshape → Plot trends → Fit D
 
 ---
 
-## 📸 Visual Plots
+##  Visual Plots
 
 | Oil Rate – F-1 C | Oil Rate – F-12 | Rate & Cumulative |
 |------------------|------------------|--------------------|
@@ -109,16 +109,14 @@ Load Excel → Inspect structure → Clean and reshape → Plot trends → Fit D
 
 ---
 
-## 🧾 License
+##  License
 
 This project is open for educational and non-commercial use.  
 Please acknowledge the original dataset provider (Equinor ASA) in any derivative work.
 
 ---
 
-## 👤 Author
+##  Author
 
 **Anuri Nwagbara**  
-📍 Norway  
-🔗 [LinkedIn](https://linkedin.com/in/anuri-nwagbara)  
-📧 nwagbaraanuri@gmail.com
+
