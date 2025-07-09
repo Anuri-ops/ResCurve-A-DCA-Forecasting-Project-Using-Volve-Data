@@ -1,11 +1,11 @@
 
-# 📉 ResCurve: A DCA & Forecasting Project Using Volve Data
+# ResCurve: A DCA & Forecasting Project Using Volve Data
 
 This project analyzes production performance from the **Volve Field** on the Norwegian Continental Shelf using decline curve models and simplified material balance techniques.
 
 ---
 
-## 🎯 Objective
+##  Objective
 
 Using historical production data for multiple wellbores, the project aims to:
 
@@ -13,10 +13,10 @@ Using historical production data for multiple wellbores, the project aims to:
 - Estimate **Original Oil in Place (OOIP)** via analytical equations
 - Forecast future oil production and **Estimate Ultimate Recovery (EUR)**
 - Visualize decline behavior and reservoir potential with insightful plots
-
+P
 ---
 
-## 🔬 Methodology
+##  Methodology
 
 We follow a structured pipeline:
 
@@ -26,7 +26,7 @@ Excel Data → Load & Clean → DCA Fitting → OOIP Estimation → Forecasting 
 
 ---
 
-## 📈 Key Findings
+##  Key Findings
 
 ### Decline Curve Fitting
 
@@ -67,18 +67,18 @@ Using a simplified material balance equation and assumed formation volume factor
 
 ---
 
-## 📁 Dataset
+##  Dataset
 
 **Source:** [Equinor Volve Field Dataset](https://www.equinor.com/energy/volve-data-sharing)  
 **Acknowledgment:**
 
 > *We gratefully acknowledge Equinor ASA for providing the open Volve dataset for research and educational purposes.*
 
-⚠️ *Note: PVT data was unavailable at the time due to site maintenance. A standard Bo of 1.2 reservoir bbl/STB was assumed.*
+ *Note: PVT data was unavailable at the time due to site maintenance. A standard Bo of 1.2 reservoir bbl/STB was assumed.*
 
 ---
 
-## 📷 Visual Snapshots
+##  Plots
 
 | Oil Rate – F-1 C | Oil Rate – F-12 | Rate & Cumulative |
 |------------------|------------------|--------------------|
@@ -98,13 +98,13 @@ jupyter notebook "ResCurve A DCA & Forecasting Project Using Volve Data.ipynb"
 
 ---
 
-## 👩🏽‍🔬 Author
+##  Author
 
 **Anuri Nwagbara**  
 Reservoir & Process Engineer
 
 ---
 
-## 📄 License
+##  License
 
 MIT License – see `LICENSE.md` for details.
