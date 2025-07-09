@@ -78,7 +78,7 @@ Load Excel → Inspect structure → Clean and reshape → Plot trends → Fit D
   - **RMSE = 944.97**, **R² = 0.6769**
   - Selected as the **best-fit model** for forecasting and EUR estimation.
 
-![Decline Curve Fits](Decline_Curve_Fits.png)
+![Decline Curve Fits](images/Decline_Curve_Fits.png)
 
 ---
 
@@ -89,7 +89,7 @@ Load Excel → Inspect structure → Clean and reshape → Plot trends → Fit D
 - **Limit reached**: Day 4048  
 - **Estimated Ultimate Recovery (EUR)**: 5,026,990 Sm³
 
-![Forecast with Economic Limit](Forcast_With_Economic_Limit.png)
+![Forecast with Economic Limit](images/Forcast_With_Economic_Limit.png)
 
 ---
 
@@ -105,7 +105,7 @@ Load Excel → Inspect structure → Clean and reshape → Plot trends → Fit D
 
 | Oil Rate – F-1 C | Oil Rate – F-12 | Rate & Cumulative |
 |------------------|------------------|--------------------|
-| ![F-1 C](Well_F-1.png) | ![F-12](Well_F_12.png) | ![Cumulative](Rate_&_Cumulative.png) |
+| ![F-1 C](images/Well_F-1.png) | ![F-12](images/Well_F_12.png) | ![Cumulative](images/Rate_&_Cumulative.png) |
 
 ---
 
