@@ -11,7 +11,7 @@ Using historical production data for multiple wellbores, the goal is to:
 
 - Apply **Decline Curve Analysis (DCA)** models: Exponential, Harmonic, and Hyperbolic
 - Performed simplified volumetric-style **OOIP** estimation using production data and assumed PVT parameters for educational reservoir-analysis purposes.
-- Forecast **future production** using the best-fit decline model
+- Forecasted production decline to economic limit using **hyperbolic decline-curve** fitting calibrated against historical Volve production data.
 - Generate **clean, visual plots** to support reservoir performance interpretation
 
 ---
@@ -63,13 +63,8 @@ Load Excel → Inspect structure → Clean and reshape → Plot trends → Fit D
 
 ###  Well Selection – 15/9-F-12
 
-**Well 15/9-F-12** was selected for decline analysis due to:
-
--  Long Production Life: Over 3000 days of production data  
--  High Cumulative Output: ~4.5 million Sm³  
--  Consistent Production Trends: Minimal interruptions  
--  Clear Decline Pattern: Ideal for decline curve model fitting  
-
+- The decline behaviour observed in **Well 15/9-F-12** indicated a stable long-term production decline suitable for hyperbolic modelling. 
+- Forecast results demonstrated gradual rate depletion toward economic limit conditions, supporting the use of analytical decline methods for long-term production estimation and EUR approximation under limited reservoir data conditions.
 ---
 
 ###  Decline Curve Fitting
