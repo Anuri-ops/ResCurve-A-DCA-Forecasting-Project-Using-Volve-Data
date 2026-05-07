@@ -10,7 +10,7 @@ This project uses production data from the **Volve field** (Norwegian Continenta
 Using historical production data for multiple wellbores, the goal is to:
 
 - Apply **Decline Curve Analysis (DCA)** models: Exponential, Harmonic, and Hyperbolic
-- Estimate **Original Oil in Place (OOIP)** using simplified material balance
+- Performed simplified volumetric-style **OOIP** estimation using production data and assumed PVT parameters for educational reservoir-analysis purposes.
 - Forecast **future production** using the best-fit decline model
 - Generate **clean, visual plots** to support reservoir performance interpretation
 
