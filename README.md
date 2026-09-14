@@ -1,117 +1,82 @@
+# ResCurve: Decline-Curve Analysis and Forecasting Using Volve Data
 
-#  ResCurve: A DCA & Forecasting Project Using Volve Data
+ResCurve is a compact **decline-curve analysis (DCA)** project using open production data from Equinor's Volve field on the Norwegian Continental Shelf. The repository demonstrates production-data preparation, comparison of exponential, harmonic and hyperbolic Arps-style decline functions, and a short illustrative extrapolation for well **15/9-F-12**.
 
-This project uses production data from the **Volve field** (Norwegian Continental Shelf) to estimate reserves, apply decline curve models, and forecast future production trends.
+## Scope
 
----
+This is a **project-level analytical exercise**, not a reserves report or field forecast. It does **not** estimate OOIP, recovery factor, economic reserves, or a validated economic limit.
 
-##  Objectives
+The workflow uses the workbook's **Monthly Production Data** sheet and converts monthly oil volume to an average flowing-day oil rate using reported on-stream hours. This avoids treating a partial month of production as if it were a full-month rate.
 
-Using historical production data for multiple wellbores, the goal is to:
+## Objective
 
-- Apply **Decline Curve Analysis (DCA)** models: Exponential, Harmonic, and Hyperbolic
-- Forecasted production decline to economic limit using **hyperbolic decline-curve** fitting calibrated against historical Volve production data.
-- Generate **clean, visual plots** to support reservoir performance interpretation
+- Load and quality-check Volve production data
+- Compare production histories across available wellbores
+- Prepare a post-peak decline window for well 15/9-F-12
+- Fit exponential, harmonic and hyperbolic decline functions
+- Compare fit quality using RMSE and R²
+- Generate a short illustrative extrapolation from the fitted decline trend
 
----
+## Dataset
 
-##  Tools & Libraries
+**Source:** Equinor Volve Field Dataset  
+**Access:** https://www.equinor.com/energy/volve-data-sharing
 
-This analysis is implemented in **Python**, using the following packages:
+The source workbook is **not included** in this repository. To reproduce the notebook, place `Volve production data.xlsx` in a local `data/` folder.
 
-- `openpyxl` – Reading Excel files
-- `pandas` – Data cleaning and manipulation
-- `matplotlib` – Plotting production trends and model fits
-- `numpy` – Numerical computations and model calculations
-- `scipy.optimize` – Curve fitting (nonlinear regression)
-- `sklearn.metrics` – Model performance evaluation (RMSE, R²)
+## Current fit result
 
----
+Using positive-rate monthly observations from the peak-rate month onward:
 
-##  Dataset Overview
+| Model | RMSE (Sm³/day) | R² |
+|---|---:|---:|
+| Exponential | 439.90 | 0.9194 |
+| Harmonic | 640.08 | 0.8293 |
+| Hyperbolic | 440.25 | 0.9192 |
 
-The dataset includes daily and monthly production volumes for 7 wellbores, including:
+The **exponential model is marginally best on these in-sample metrics**. The hyperbolic fit converges to the lower bound `b = 0.01`, which indicates behaviour very close to exponential decline for this fitting window.
 
-- Oil, gas, and water production (Sm³)
-- Well names, dates, and operational metadata
-- Injection volumes (where available)
+![Decline curve fits](images/decline_curve_fits.png)
 
----
+## Illustrative extrapolation
 
-##  Data Acknowledgment
+The notebook extends the selected best-fit decline function by one year beyond the final observation to demonstrate the forecasting workflow.
 
-This project utilizes publicly available production data from the **Volve Field**, provided by **Equinor ASA**.
+![Illustrative extrapolation](images/illustrative_extrapolation.png)
 
-> **Dataset Source:** Equinor Volve Field Dataset  
-> **Accessed via:** [https://www.equinor.com/energy/volve-data-sharing](https://www.equinor.com/energy/volve-data-sharing)
+This extrapolation should not be interpreted as a validated production forecast. The well history contains operational variability and later rate changes that a single deterministic decline curve does not explain.
 
-We gratefully acknowledge **Equinor ASA** for sharing this open dataset for research and educational purposes.  
-*All rights and credits for the data belong to Equinor ASA.*
+## Well history
 
----
+![Monthly oil rate](images/f12_monthly_oil_rate.png)
 
-##  Workflow Summary
+## Important limitations
 
-```
-Load Excel → Inspect structure → Clean and reshape → Plot trends → Fit DCA models → Forecast → Estimate reserves
-```
+- Single-well deterministic DCA example
+- Model selection is based on in-sample RMSE and R² only
+- No train/test validation or uncertainty quantification
+- No history matching or reservoir simulation
+- No automated regime segmentation or event attribution
+- No economics, OOIP, material-balance or recovery-factor calculation
+- Operational changes, shut-ins and interventions can invalidate a single decline trend
 
----
+## Tools
 
-##  Key Findings
+- Python
+- pandas / NumPy
+- SciPy
+- scikit-learn
+- matplotlib
+- openpyxl
+- Jupyter
 
-###  Well Selection – 15/9-F-12
+## Repository contents
 
-- The decline behaviour observed in **Well 15/9-F-12** indicated a stable long-term production decline suitable for hyperbolic modelling. 
-- Forecast results demonstrated gradual rate depletion toward economic limit conditions, supporting the use of analytical decline methods for long-term production estimation and EUR approximation under limited reservoir data conditions.
----
+- `ResCurve A DCA & Forecasting Project Using Volve Data.ipynb` — reproducible analysis
+- `images/` — figures generated by the notebook
+- `requirements.txt` — Python dependencies
 
-###  Decline Curve Fitting
-
-- The **hyperbolic model** provided the best match to historical data:
-  - **RMSE = 944.97**, **R² = 0.6769**
-  - Selected as the **best-fit model** for forecasting and EUR estimation.
-
-![Decline Curve Fits](images/Decline_Curve_Fits.png)
-
----
-
-###  Forecasting & EUR
-
-- Forecasted oil rate over ~5000 days using the hyperbolic model
-- **Economic limit**: 100 Sm³/day  
-- **Limit reached**: Day 4048  
-- **Estimated Ultimate Recovery (EUR)**: 5,026,990 Sm³
-
-![Forecast with Economic Limit](images/Forcast_With_Economic_Limit.png)
-
----
-
-### Note on volumes in place
-
-This project estimates recoverable volumes from decline behaviour only.
-Estimating original oil in place requires volumetric data or a pressure-based
-material balance with PVT, neither of which is available in the open Volve
-production dataset.
-
----
-
-##  Visual Plots
-
-| Oil Rate – F-1 C | Oil Rate – F-12 | Rate & Cumulative |
-|------------------|------------------|--------------------|
-| ![F-1 C](images/Well_F-1.png) | ![F-12](images/Well_F_12.png) | ![Cumulative](images/Rate_&_Cumulative.png) |
-
----
-
-##  License
-
-This project is open for educational and non-commercial use.  
-Please acknowledge the original dataset provider (Equinor ASA) in any derivative work.
-
----
-
-##  Author
+## Author
 
 **Anuri Nwagbara**  
-
+*Geological Engineer*
