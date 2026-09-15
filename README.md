@@ -1,12 +1,12 @@
 # ResCurve: Decline-Curve Analysis and Forecasting Using Volve Data
 
-ResCurve is a compact **decline-curve analysis (DCA)** project using open production data from Equinor's Volve field on the Norwegian Continental Shelf. The repository demonstrates production-data preparation, comparison of exponential, harmonic and hyperbolic Arps-style decline functions, and a short illustrative extrapolation for well **15/9-F-12**.
+ResCurve is a compact decline-curve analysis (DCA) project using open production data from Equinor's Volve field on the Norwegian Continental Shelf. The repository demonstrates production-data preparation, comparison of exponential, harmonic and hyperbolic Arps-style decline functions, and a short illustrative extrapolation for well 15/9-F-12.
 
 ## Scope
 
-This is a **project-level analytical exercise**, not a reserves report or field forecast. It does **not** estimate OOIP, recovery factor, economic reserves, or a validated economic limit.
+This is a project-level analytical exercise, not a reserves report or field forecast. It does not estimate OOIP, recovery factor, economic reserves, or a validated economic limit.
 
-The workflow uses the workbook's **Monthly Production Data** sheet and converts monthly oil volume to an average flowing-day oil rate using reported on-stream hours. This avoids treating a partial month of production as if it were a full-month rate.
+The workflow uses the workbook's Monthly Production Data sheet and converts monthly oil volume to an average flowing-day oil rate using reported on-stream hours. This avoids treating a partial month of production as if it were a full-month rate.
 
 ## Objective
 
@@ -22,7 +22,7 @@ The workflow uses the workbook's **Monthly Production Data** sheet and converts 
 **Source:** Equinor Volve Field Dataset  
 **Access:** https://www.equinor.com/energy/volve-data-sharing
 
-The source workbook is **not included** in this repository. To reproduce the notebook, place `Volve production data.xlsx` in a local `data/` folder.
+The source workbook is not included in this repository. To reproduce the notebook, place `Volve production data.xlsx` in a local `data/` folder.
 
 ## Current fit result
 
@@ -34,7 +34,7 @@ Using positive-rate monthly observations from the peak-rate month onward:
 | Harmonic | 640.08 | 0.8293 |
 | Hyperbolic | 440.25 | 0.9192 |
 
-The **exponential model is marginally best on these in-sample metrics**. The hyperbolic fit converges to the lower bound `b = 0.01`, which indicates behaviour very close to exponential decline for this fitting window.
+The exponential model is marginally best on these in-sample metrics. The hyperbolic fit converges to the lower bound `b = 0.01`, which indicates behaviour very close to exponential decline for this fitting window.
 
 ![Decline curve fits](images/decline_curve_fits.png)
 
